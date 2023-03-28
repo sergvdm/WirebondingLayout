@@ -134,7 +134,7 @@ namespace Altium.Geometry2D
             else return this / n;
         }
 
-        public Vector2I Ortogonal()
+        public Vector2I Orthogonal()
         {
             return new Vector2I(-Y, X);
         }

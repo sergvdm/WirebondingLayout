@@ -6,8 +6,8 @@ namespace Altium.Wirebonding.Model
     // all angular dimensions are in radians
     class DiePad : Pad
     {
-        public DiePad(string name, Point2D location, double rotation, Size2D size, double thickness, double baseZ)
-            : base(name, location, rotation, size, thickness, baseZ)
+        public DiePad(string name, Point2D location, double rotation, PadStyle style, Size2D size, double thickness, double baseZ, bool isFlipped)
+            : base(name, location, rotation, style, size, thickness, baseZ, isFlipped)
         {
         }
     }

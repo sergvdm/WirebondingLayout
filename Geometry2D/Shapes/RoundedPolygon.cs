@@ -95,7 +95,7 @@ namespace Altium.Geometry2D.Shapes
                 var nvunit = nv.Unit();
                 var arcStartPoint = Vertices[i] + pvunit * arcRadius;
                 var arcEndPoint = Vertices[i] + nvunit * arcRadius;
-                var ir = Math2D.Intersection(new InfiniteLine(arcStartPoint, pvunit.Ortogonal()), new InfiniteLine(arcEndPoint, nvunit.Ortogonal()));
+                var ir = Math2D.Intersection(new InfiniteLine(arcStartPoint, pvunit.Orthogonal()), new InfiniteLine(arcEndPoint, nvunit.Orthogonal()));
                 if (ir.AreIntersected)
                 {
                     var center = ir.Point1;

@@ -75,7 +75,7 @@ namespace Altium.Geometry2D.Shapes
             else
             {
                 var z = endPoint - startPoint;
-                var n = z.Ortogonal().Unit();
+                var n = z.Orthogonal().Unit();
                 var d = z.Norm();
                 var h2 = radius * radius - d * d / 4;
                 if (h2 < 0) h2 = 0;
@@ -190,7 +190,7 @@ namespace Altium.Geometry2D.Shapes
 
         public override Vector2D Tangent(Point2D pt)
         {
-            return SweepAngle >= 0 ? new Vector2D(Center, pt).Ortogonal() : new Vector2D(pt, Center).Ortogonal();
+            return SweepAngle >= 0 ? new Vector2D(Center, pt).Orthogonal() : new Vector2D(pt, Center).Orthogonal();
         }
 
         public override double Curvature(Point2D pt)
@@ -223,7 +223,7 @@ namespace Altium.Geometry2D.Shapes
             else
             {
                 var z = newEndPoint - newStartPoint;
-                var n = z.Ortogonal().Unit();
+                var n = z.Orthogonal().Unit();
                 var d = z.Norm();
                 var h2 = Radius * Radius - d * d / 4;
                 if (h2 < 0) h2 = 0;

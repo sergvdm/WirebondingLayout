@@ -6,8 +6,8 @@ namespace Altium.Wirebonding.Model
     // all angular dimensions are in radians
     class WirebondingProfile
     {
-        public PadStyle FingerPadShape { get; }
-        public Point2D FingerPadSize { get; }
+        public PadStyle FingerPadStyle { get; }
+        public Size2D FingerPadSize { get; }
         public double FingerPadToFingerPadClearance { get; }
         public double FingerPadToDieClearance { get; }
         public double FingerPadAlignmentToWireTolerance { get; }

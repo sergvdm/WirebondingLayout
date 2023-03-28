@@ -179,7 +179,7 @@ namespace Altium.Geometry2D
 
         public static Point2D ProjectTo(this Point2D pt, Point2D lp1, Point2D lp2)
         {
-            var v = (lp2 - lp1).Ortogonal();
+            var v = (lp2 - lp1).Orthogonal();
             var ir = Intersection(pt, pt + v, lp1, lp2);
             return ir.Point1;
         }
@@ -268,7 +268,7 @@ namespace Altium.Geometry2D
             lp2 = lp2 - ov;
             var p = c.ProjectTo(lp1, lp2);
             var d = c.DistanceTo(p);
-            var v = (lp2 - lp1).Ortogonal();
+            var v = (lp2 - lp1).Orthogonal();
             if (v * (p - c) < 0) v = -v;
             if (d >= circleRadius)
             {
@@ -306,7 +306,7 @@ namespace Altium.Geometry2D
             var c2 = circle2Center - ov;
             var v = c2 - c1;
             var vu = v.Unit();
-            var vo = vu.Ortogonal();
+            var vo = vu.Orthogonal();
             var d = v.Norm();
 
             var rmin = Math.Min(circle1Radius, circle2Radius);

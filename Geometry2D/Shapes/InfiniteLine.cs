@@ -26,7 +26,7 @@
 
         public InfiniteLine Ortogonal()
         {
-            return new InfiniteLine(Point1, Vector.Ortogonal());
+            return new InfiniteLine(Point1, Vector.Orthogonal());
         }
 
         public override bool Equal(IShape obj)

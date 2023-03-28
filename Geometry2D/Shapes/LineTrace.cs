@@ -30,7 +30,7 @@
         protected override void BuildRegion(IGeometry2DEngine geometry2DEngine, IRegionBuilder regionBuilder, IGeometryPathBuilder pathBuilder, bool invert)
         {
             pathBuilder.BeginPath(invert);
-            var vop = Guide.Vector.Ortogonal().Unit();
+            var vop = Guide.Vector.Orthogonal().Unit();
             var von = -vop;
             var hw = Width / 2;
             var pt1 = Guide.StartPoint + von * hw;

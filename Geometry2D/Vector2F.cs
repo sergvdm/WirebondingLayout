@@ -123,7 +123,7 @@ namespace Altium.Geometry2D
             else return this / n;
         }
 
-        public Vector2F Ortogonal()
+        public Vector2F Orthogonal()
         {
             return new Vector2F(-Y, X);
         }

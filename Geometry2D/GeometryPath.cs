@@ -109,7 +109,7 @@ namespace Altium.Geometry2D
                 {
                     var segment = Segments[i];
                     var midpoint = segment.Midpoint();
-                    var normalLineViaMidpoint = new InfiniteLine(midpoint, segment.Tangent(midpoint).Ortogonal());
+                    var normalLineViaMidpoint = new InfiniteLine(midpoint, segment.Tangent(midpoint).Orthogonal());
                     for (int j = 0; j < Segments.Count; j++)
                     {
                         var k = i + 1 + j;

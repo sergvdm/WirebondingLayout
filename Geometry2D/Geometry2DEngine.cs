@@ -2376,7 +2376,7 @@ namespace Altium.Geometry2D
         {
             Func<Vector2D, IGeometryPath, IRectangle> calcMinRectInDirection = (baseVector, apath) =>
             {
-                var baseVector2 = baseVector.Ortogonal();
+                var baseVector2 = baseVector.Orthogonal();
                 var tempBottom = CreateInfiniteLine(apath.BoundingRect.Center - baseVector2 * apath.BoundingRect.MaxSize * 2, baseVector);
                 var tempRight = CreateInfiniteLine(apath.BoundingRect.Center + baseVector * apath.BoundingRect.MaxSize * 2, baseVector2);
                 var tempTop = CreateInfiniteLine(apath.BoundingRect.Center + baseVector2 * apath.BoundingRect.MaxSize * 2, baseVector);
@@ -2401,7 +2401,7 @@ namespace Altium.Geometry2D
             double minSquare = double.MaxValue;
             foreach (var segment in path.Segments)
             {
-                var rect = calcMinRectInDirection(segment.Tangent(segment.Midpoint()).Ortogonal(), path);
+                var rect = calcMinRectInDirection(segment.Tangent(segment.Midpoint()).Orthogonal(), path);
                 if (minSquare > rect.Area())
                 {
                     minSquare = rect.Area();
@@ -2503,8 +2503,8 @@ namespace Altium.Geometry2D
             var newSegments = new LinkedList<IGeometryPathSegment>();
             foreach (var segment in path.Segments)
             {
-                var newStartPoint = SnapToGrid(segment.StartPoint - segment.Tangent(segment.StartPoint).Ortogonal().Unit() * offset);
-                var newEndPoint = SnapToGrid(segment.EndPoint - segment.Tangent(segment.EndPoint).Ortogonal().Unit() * offset);
+                var newStartPoint = SnapToGrid(segment.StartPoint - segment.Tangent(segment.StartPoint).Orthogonal().Unit() * offset);
+                var newEndPoint = SnapToGrid(segment.EndPoint - segment.Tangent(segment.EndPoint).Orthogonal().Unit() * offset);
                 IGeometryPathSegment newSegment;
                 switch (segment)
                 {
@@ -2512,7 +2512,7 @@ namespace Altium.Geometry2D
                         newSegment = new Line(newStartPoint, newEndPoint);
                         break;
                     case IArc arc:
-                        var newMidpoint = SnapToGrid(segment.Midpoint() - segment.Tangent(segment.Midpoint()).Ortogonal().Unit() * offset);
+                        var newMidpoint = SnapToGrid(segment.Midpoint() - segment.Tangent(segment.Midpoint()).Orthogonal().Unit() * offset);
                         newSegment = new Arc(newStartPoint, newEndPoint, newMidpoint);
                         break;
                     default:
